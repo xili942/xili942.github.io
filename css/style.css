@@ -186,6 +186,16 @@ h1 { margin: 0 0 18px; font-family: var(--head-font); font-weight: 600; font-siz
   .hex { width: 238px; }
 }
 
+/* ================= 随记块 ================= */
+.note-card { max-width: 760px; margin: 0 0 30px; padding: 2px 0 2px 18px; border-left: 3px solid var(--line-strong); }
+.note-body p { margin: 0 0 10px; font-size: 15.5px; line-height: 2.05; color: var(--ink-soft); }
+.note-body p:last-child { margin-bottom: 0; }
+.note-photos { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.note-photos .np { display: block; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface-2); }
+.note-photos .np img { width: 100%; height: auto; transition: transform .5s ease; }
+.note-photos .np:hover img { transform: scale(1.015); }
+@media (max-width: 560px) { .note-photos { grid-template-columns: 1fr; } }
+
 /* ================= 结尾与页脚 ================= */
 .end-mark { margin: 46px 0 0; text-align: center; font-size: 12px; letter-spacing: .34em; color: var(--ink-faint); }
 .footer { margin: 54px 0 58px; text-align: center; font-size: 12.5px; letter-spacing: .08em; color: var(--ink-faint); }
