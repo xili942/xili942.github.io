@@ -7,6 +7,9 @@
   lb.className = 'lightbox';
   lb.hidden = true;
   lb.innerHTML =
+    '<button type="button" class="lb-back" aria-label="返回文章">' +
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>' +
+    '<span>返回</span></button>' +
     '<button type="button" class="lb-close" aria-label="关闭大图">' +
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
     '</button><img alt=""><p class="lb-cap" hidden></p>';
@@ -46,6 +49,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(true); });
   lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(true); });
   lb.querySelector('.lb-close').addEventListener('click', function () { closeLb(true); });
+  lb.querySelector('.lb-back').addEventListener('click', function () { closeLb(true); });
 
   function plainClick(e) {
     return !e.defaultPrevented && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;

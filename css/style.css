@@ -113,6 +113,9 @@ h1 { margin: 0 0 18px; font-family: var(--head-font); font-weight: 600; font-siz
 .level-score { flex: none; width: 34px; font-family: Georgia, serif; font-size: 15px; color: var(--accent); text-align: right; }
 .level-text { font-size: 14.5px; line-height: 1.9; color: var(--ink-soft); }
 .rate-foot { margin: 24px 0 0; font-size: 13px; letter-spacing: .04em; color: var(--ink-faint); max-width: 620px; }
+.rate-sub { margin: 42px 0 18px; }
+.rate-sub h2 { margin: 0 0 8px; font-family: var(--head-font); font-size: 21px; font-weight: 600; letter-spacing: .02em; }
+.rate-sub p { margin: 0; font-size: 13.5px; line-height: 1.9; color: var(--ink-faint); max-width: 640px; }
 
 /* ================= 天分隔 ================= */
 .day { display: flex; align-items: center; gap: 14px; margin: 44px 0 18px; }
@@ -229,10 +232,37 @@ h1 { margin: 0 0 18px; font-family: var(--head-font); font-weight: 600; font-siz
 }
 .lightbox .lb-close:hover { background: rgba(17, 21, 19, .78); }
 .lightbox .lb-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lightbox .lb-back {
+  position: absolute; top: 14px; left: 14px; z-index: 1;
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 42px; padding: 0 17px 0 14px;
+  border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px;
+  background: rgba(17, 21, 19, .55); color: #F6F4EE;
+  font: inherit; font-size: 13.5px; letter-spacing: .08em; cursor: pointer;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.lightbox .lb-back:hover { background: rgba(17, 21, 19, .78); }
+.lightbox .lb-back:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lightbox .lb-back svg { display: block; flex: none; opacity: .92; }
 .ph-view img, .note-photos .np img { cursor: zoom-in; }
 html.lb-open { overflow: hidden; }
 @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
-@media (max-width: 560px) { .lightbox { padding: 14px; } .lightbox .lb-close { top: 10px; right: 10px; } }
+@media (max-width: 560px) { .lightbox { padding: 14px; } .lightbox .lb-close { top: 10px; right: 10px; } .lightbox .lb-back { top: 10px; left: 10px; } }
+
+/* ================= 城市总评 ================= */
+.city-summary {
+  margin: 54px 0 0; padding: 34px 30px 28px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); text-align: center;
+}
+.city-kicker { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .34em; color: var(--accent); }
+.city-kicker::before { content: ""; display: block; width: 28px; height: 2px; border-radius: 2px; background: var(--accent); margin: 0 auto 14px; }
+.city-body { max-width: 640px; margin: 20px auto 0; text-align: left; font-size: 15.5px; line-height: 2.05; color: var(--ink-soft); }
+.city-body p { margin: 0 0 12px; }
+.city-body p:last-child { margin: 0; }
+.city-hex { width: 340px; max-width: 100%; margin: 24px auto 0; }
+.city-hex svg { display: block; width: 100%; height: auto; }
+@media (max-width: 560px) { .city-summary { margin-top: 42px; padding: 26px 18px 22px; } .city-hex { width: 300px; margin-top: 20px; } }
 
 /* ================= 结尾与页脚 ================= */
 .end-mark { margin: 46px 0 0; text-align: center; font-size: 12px; letter-spacing: .34em; color: var(--ink-faint); }
