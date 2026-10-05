@@ -380,7 +380,7 @@ html.lb-open { overflow: hidden; }
   padding: 22px; background: rgba(12, 15, 13, .92);
 }
 .aside-overlay:target { display: flex; animation: lbIn .2s ease; }
-html:has(#aside:target) { overflow: hidden; }
+html:has(#aside:target), html:has(#diary:target) { overflow: hidden; }
 .aside-backdrop { position: absolute; inset: 0; cursor: default; }
 .aside-card {
   position: relative; z-index: 1;
@@ -405,6 +405,23 @@ html:has(#aside:target) { overflow: hidden; }
 @media (max-width: 560px) {
   .aside-overlay { padding: 14px; }
   .aside-card { padding: 30px 24px 34px; }
+}
+
+/* ================= 首页日记 · 悬浮小点与条目 ================= */
+.diary-dot {
+  position: fixed; right: 20px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); z-index: 90;
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  font-size: 15px; line-height: 1; color: var(--ink-faint); text-decoration: none;
+  opacity: .25; transition: opacity .25s, transform .25s, color .25s;
+}
+.diary-dot:hover { opacity: .9; color: var(--accent); transform: translateY(-2px); }
+.diary-dot:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 50%; }
+.diary-kicker { font-size: 15px; letter-spacing: 0; }
+.diary-entry { margin: 0 0 26px; }
+.diary-entry:last-child { margin-bottom: 0; }
+.aside-body .diary-date { margin: 0 0 10px; font-size: 12px; letter-spacing: .18em; color: var(--ink-faint); }
+@media (max-width: 560px) {
+  .diary-dot { right: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
 }
 .footer { margin: 54px 0 58px; text-align: center; font-size: 12.5px; letter-spacing: .08em; color: var(--ink-faint); }
 .footer .line { width: 44px; height: 1px; background: var(--line-strong); margin: 0 auto 20px; }
